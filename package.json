@@ -1,0 +1,19 @@
+{
+  "name": "eisner-front",
+  "version": "0.1.0",
+  "description": "Front for tegneseriebloggen.no",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Jonas Knutsen",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.1.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}
