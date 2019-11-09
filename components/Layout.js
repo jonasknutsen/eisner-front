@@ -35,8 +35,37 @@ const Layout = (props) => (
       main {
         flex: 1;
       }
+      h1, h2, h3, h4 {
+        letter-spacing: 1px;
+        font-weight: 500;
+        margin: 0;
+      }
+      h1 {
+        font-size: 3em;
+        line-height: 1.05em;
+      }
+      h2 {
+        font-size:2.25em;
+        line-height: 1.25em;
+      }
+      h3 {
+        font-size: 1.75em;
+        line-height: 1.25em;
+      }
+      h4 {
+        font-size: 1.125em;
+        line-height: 1.22222222em;
+      }
+      a {
+        color: #DB0220;
+        text-decoration: none;
+      }
   `}</style>
   </div>
 )
+
+Layout.propTypes = {
+  children: PropTypes.object
+}
 
 export default Layout

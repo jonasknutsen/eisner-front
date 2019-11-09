@@ -1,18 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
+import PostBox from '../components/PostBox'
 
 class Index extends React.Component {
   render = () => {
     const { posts } = this.props
-    console.log(posts)
     return (
-      <div>
+      <div className='posts'>
         {posts.map((post, key) => {
           return (
-            <div key={key}>{post.title.rendered}</div>
+            <PostBox post={post} key={key} />
           )
         })}
+        <style jsx>{`
+          .posts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }  
+        `}</style>
       </div>
     )
   }
