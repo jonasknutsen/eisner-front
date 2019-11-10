@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
-import Link from 'next/link'
 import Head from 'next/head'
 import PostContent from '../../components/PostContent'
-import ReadableDateCategory from '../../components/ReadableDateCategory'
+import PostBoxSimple from '../../components/PostBoxSimple'
 
 class Page extends React.Component {
   render = () => {
@@ -21,20 +20,11 @@ class Page extends React.Component {
           <PostContent content={page.content.rendered} />
         </section>
         {page.acf.posts && <section className='latest-articles'>
-          {page.acf.posts.map((post, i) => (
-            <div key={post.ID} className='category-article'>
-              <h2 className='category-article-title'>
-                <Link href={`/${post.post_name}`}>
-                  <a>{post.post_title}</a>
-                </Link>
-              </h2>
-              <div className='category-article-text'>
-                <p className='category-article-date'>Publisert <ReadableDateCategory rawDate={post.post_date} /></p>
-                <p><span dangerouslySetInnerHTML={{ __html: post.post_content.substring(0, 250) }} /> ...</p>
-                <Link href={`/${post.post_name}`}><a>Les mer</a></Link>
-              </div>
-            </div>
-          ))}
+          {page.acf.posts.map((post, key) => {
+            return (
+              <PostBoxSimple post={post} key={key} />
+            )
+          })}
         </section>}
         <style jsx>{`
           .page {
@@ -68,10 +58,8 @@ class Page extends React.Component {
 
 Page.getInitialProps = async function ({ query }) {
   const { slug } = query
-  console.log(slug)
   const res = await fetch('https://goscinny.tegneseriebloggen.no/wp-json/wp/v2/pages?slug=' + slug)
   const data = await res.json()
-  console.log(data)
   return {
     content: data
   }

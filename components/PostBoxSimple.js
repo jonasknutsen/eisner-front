@@ -1,22 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import ReadableDate from './ReadableDate'
+import ReadableDateCategory from './ReadableDateCategory'
 
-class PostBox extends React.Component {
+class PostBoxSimple extends React.Component {
   render = () => {
     const { post } = this.props
     console.log(post)
     return (
       <div className='post-box-wrapper'>
-        <Link href={post.slug}><a>
+        <Link href={post.post_name}><a>
           <div className='post-box'>
-            <div className='post-box-hero' style={{ backgroundImage: `url(${post.acf.stort_bilde ? post.acf.stort_bilde.url : '/img/tegneseriebloggen-default.png'})` }} />
             <div className='post-box-content'>
-              <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></div>
-              <div className='post-box-date'>Publisert <ReadableDate rawDate={post.date} /></div>
-              <div className='post-box-excerpt'>{post.excerpt.rendered.replace('<p>', '').replace(post.excerpt.rendered.substring(post.excerpt.rendered.indexOf('<a '), post.excerpt.rendered.length - 1), '').substring(0, 250)} ...</div>
-              <div className='post-box-read-more'>Les mer om <span className='post-box-read-more-title' dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></div>
+              <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.post_title }} /></div>
+              <div className='post-box-date'>Publisert <ReadableDateCategory rawDate={post.post_date} /></div>
+              <div className='post-box-excerpt'><span dangerouslySetInnerHTML={{ __html: post.post_content.substring(0, 250) }} /> ...</div>
+              <div className='post-box-read-more'>Les mer om <span className='post-box-read-more-title' dangerouslySetInnerHTML={{ __html: post.post_title }} /></div>
             </div>
           </div>
         </a></Link>
@@ -27,12 +26,6 @@ class PostBox extends React.Component {
           .post-box:hover {
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s;
-          }
-          .post-box-hero {
-            background-color: red;
-            height: 13.4375rem;
-            background-size: cover;
-            background-position: center;
           }
           .post-box-content {
             margin-top: .5rem;
@@ -69,8 +62,8 @@ class PostBox extends React.Component {
   }
 }
 
-PostBox.propTypes = {
+PostBoxSimple.propTypes = {
   post: PropTypes.object
 }
 
-export default PostBox
+export default PostBoxSimple
