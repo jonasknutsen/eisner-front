@@ -8,7 +8,7 @@ class PostBox extends React.Component {
     const { post } = this.props
     return (
       <div className='post-box-wrapper'>
-        <Link href={post.slug}><a>
+        <Link href='/[slug]' as={`/${post.slug}`}><a>
           <div className='post-box'>
             <div className='post-box-hero' style={{ backgroundImage: `url(${post.acf.stort_bilde ? post.acf.stort_bilde.url : '/img/tegneseriebloggen-default.png'})` }} />
             <div className='post-box-content'>

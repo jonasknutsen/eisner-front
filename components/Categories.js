@@ -10,7 +10,7 @@ class Categories extends React.Component {
         <strong>Postet under:</strong>
         <ul>
           {category.map((cat, index) => (
-            <li key={index} className='category-name'><Link href={`/k/${cat.post_name}`}><a>{cat.post_title}</a></Link></li>
+            <li key={index} className='category-name'><Link href='/k/[slug]' as={`/k/${cat.post_name}`}><a>{cat.post_title}</a></Link></li>
           ))}
         </ul>
         <style jsx>{`

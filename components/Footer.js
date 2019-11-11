@@ -9,18 +9,18 @@ const Footer = () => (
     <div className='footer-boxes'>
       <div className='categories'>
         <ul>
-          <li><Link href='/s/blogg'><a>Blogg</a></Link></li>
-          <li><Link href='/s/nye-norske-utgivelser'><a>Nye norske utgivelser</a></Link></li>
-          <li><Link href='/s/eldre-norske-utgivelser'><a>Eldre norske utgivelser</a></Link></li>
-          <li><Link href='/s/utenlandske-utgivelser'><a>Utenlandske utgivelser</a></Link></li>
+          <li><Link href='/s/[slug]' as='/s/blogg'><a>Blogg</a></Link></li>
+          <li><Link href='/s/[slug]' as='/s/nye-norske-utgivelser'><a>Nye norske utgivelser</a></Link></li>
+          <li><Link href='/s/[slug]' as='/s/eldre-norske-utgivelser'><a>Eldre norske utgivelser</a></Link></li>
+          <li><Link href='/s/[slug]' as='/s/utenlandske-utgivelser'><a>Utenlandske utgivelser</a></Link></li>
         </ul>
       </div>
       <div className='pages'>
         <ul>
-          <li><Link href='/k/om-tegneseriebloggen-no'><a>Om tegneseriebloggen.no</a></Link></li>
-          <li><Link href='/k/kontakt-tegneseriebloggen-no'><a>Kontakt tegneseriebloggen.no</a></Link></li>
-          <li><a href='https://www.twitter.com/tegneserieblogg'>tegneseriebloggen.no på Twitter</a></li>
-          <li><a href='https://www.instagram.com/tegneseriebloggen/'>tegneseriebloggen.no på Instagram</a></li>
+          <li><Link href='/k/[slug]' as='/k/om-tegneseriebloggen-no'><a>Om tegneseriebloggen.no</a></Link></li>
+          <li><Link href='/k/[slug]' as='/k/kontakt-tegneseriebloggen-no'><a>Kontakt tegneseriebloggen.no</a></Link></li>
+          <li><a as='https://www.twitter.com/tegneserieblogg'>tegneseriebloggen.no på Twitter</a></li>
+          <li><a as='https://www.instagram.com/tegneseriebloggen/'>tegneseriebloggen.no på Instagram</a></li>
         </ul>
       </div>
     </div>

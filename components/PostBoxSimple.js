@@ -8,7 +8,7 @@ class PostBoxSimple extends React.Component {
     const { post } = this.props
     return (
       <div className='post-box-wrapper'>
-        <Link href={post.post_name}><a>
+        <Link href='/[slug]' as={`/${post.post_name}`}><a>
           <div className='post-box'>
             <div className='post-box-content'>
               <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.post_title }} /></div>

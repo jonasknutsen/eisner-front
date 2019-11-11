@@ -23,7 +23,7 @@ class Category extends React.Component {
       return categories.map((category, key) => {
         if (category.id === c) {
           return (
-            <Link key={key} href={`category?slug=${category.slug}`} as={`s/${category.slug}`}><a>{category.name}</a></Link>
+            <Link key={key} href='/s/[slug]' as={`/s/${category.slug}`}><a>{category.name}</a></Link>
           )
         }
       })
