@@ -8,7 +8,6 @@ import PostBoxSimple from '../../components/PostBoxSimple'
 class Page extends React.Component {
   render = () => {
     const { content } = this.props
-    console.log(content)
     const page = content[0]
     return (
       <article className='page'>

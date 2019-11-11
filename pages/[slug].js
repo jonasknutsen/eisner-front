@@ -12,7 +12,6 @@ class Post extends React.Component {
   render = () => {
     const { posts } = this.props
     const post = posts[0]
-    console.log(post)
     return (
       <article className='post'>
         <Head>

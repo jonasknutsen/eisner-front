@@ -6,7 +6,6 @@ import ReadableDate from './ReadableDate'
 class PostBox extends React.Component {
   render = () => {
     const { post } = this.props
-    console.log(post)
     return (
       <div className='post-box-wrapper'>
         <Link href={post.slug}><a>

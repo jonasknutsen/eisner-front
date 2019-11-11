@@ -5,6 +5,7 @@ const year = new Date().getFullYear()
 
 const Footer = () => (
   <footer>
+    <div className='decorative-border' />
     <div className='footer-boxes'>
       <div className='categories'>
         <ul>
@@ -34,6 +35,11 @@ const Footer = () => (
       li {
         list-style: none;
         
+      }
+      .decorative-border {
+        border-top: 1px solid #DB0220;
+        max-width: 700px;
+        margin: 0 auto;
       }
       .footer-boxes {
         display: flex;

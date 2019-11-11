@@ -8,7 +8,6 @@ import PostBox from '../../components/PostBox'
 class Category extends React.Component {
   render = () => {
     const { content, category } = this.props
-    console.log(content)
     return (
       <article className='category'>
         <Head>

@@ -7,13 +7,9 @@ const Header = () => (
     <Link href='/'><a><Tegneseriebloggen /></a></Link>
     <style jsx>{`
       header {
-        max-height: 2rem;
-        margin: .2rem 0; 
-      }
-      @media (max-width: 550px) {
-        .logo {
-          height: 2rem;
-        }
+        width: 98%;
+        max-width: 1000px;
+        margin: .2rem auto 0 auto;
       }
     `}</style>
   </header>
