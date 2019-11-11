@@ -1,7 +1,5 @@
 import React from 'react'
 import App from 'next/app'
-import Router from 'next/router'
-import withGA from 'next-ga'
 import Layout from '../components/Layout'
 
 class MyApp extends App {
@@ -27,4 +25,4 @@ class MyApp extends App {
   }
 }
 
-export default withGA('UA-67147871-1', Router)(MyApp)
+export default MyApp

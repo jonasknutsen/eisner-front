@@ -2,8 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Header from './Header'
 import Footer from './Footer'
+import { initGA, logPageView } from '../utils/analytics'
 
 class Layout extends React.Component {
+  componentDidMount () {
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
+  }
+
   render = () => {
     const { children } = this.props
     return (
