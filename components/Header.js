@@ -9,8 +9,12 @@ const Header = () => (
       header {
         width: 98%;
         max-width: 1000px;
-        margin: .2rem auto 0 auto;
+        margin: .2rem auto .3rem auto;
       }
+      @media (min-width: 768px) {
+        header {
+          margin-bottom: 0;
+        }
     `}</style>
   </header>
 )
