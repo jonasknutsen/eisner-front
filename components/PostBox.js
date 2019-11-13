@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import LazyLoad from 'react-lazyload';
+import LazyLoad from 'react-lazyload'
 import ReadableDate from './ReadableDate'
 
 class PostBox extends React.Component {
