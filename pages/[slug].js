@@ -40,7 +40,7 @@ function BlogPost ({ posts }) {
 }
 
 export async function getStaticPaths () {
-  const res = await fetch('https://goscinny.tegneseriebloggen.no/wp-json/wp/v2/posts&per_page=100')
+  const res = await fetch('https://goscinny.tegneseriebloggen.no/wp-json/wp/v2/posts?per_page=100')
   const posts = await res.json()
 
   const paths = posts.map((post) => ({
