@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import LazyLoad from 'react-lazyload'
+import Image from 'next/image'
 import ReadableDate from './ReadableDate'
 
 class PostBox extends React.Component {
@@ -12,9 +12,7 @@ class PostBox extends React.Component {
         <Link href='/[slug]' as={`/${post.slug}`}><a>
           <div className='post-box'>
             <div className='post-box-hero'>
-              <LazyLoad height={215} offset={100}>
-                <img src={post.acf.stort_bilde ? post.acf.stort_bilde.url : '/img/tegneseriebloggen-default.png'} />
-              </LazyLoad>
+              <Image height='215' width='480' src={post.acf.stort_bilde ? post.acf.stort_bilde.url : '/img/tegneseriebloggen-default.png'} />
             </div>
             <div className='post-box-content'>
               <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></div>
