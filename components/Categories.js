@@ -30,7 +30,8 @@ class Categories extends React.Component {
           a:hover {
             text-decoration: underline;
           }
-        `}</style>
+        `}
+        </style>
       </nav>
     )
   }

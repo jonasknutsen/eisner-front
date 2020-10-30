@@ -22,7 +22,8 @@ function HomePage ({ posts }) {
           flex-wrap: wrap;
           justify-content: center;
         }  
-      `}</style>
+      `}
+      </style>
     </div>
   )
 }

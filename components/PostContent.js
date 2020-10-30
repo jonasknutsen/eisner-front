@@ -35,7 +35,8 @@ class PostContent extends React.Component {
           .aligncenter {
             margin: 0 auto;
           }
-        `}</style>
+        `}
+        </style>
       </div>
     )
   }

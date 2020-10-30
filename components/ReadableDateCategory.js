@@ -12,10 +12,10 @@ class ReadableDateCategory extends React.Component {
   }
 
   convertDate (rawDate) {
-    var firstPart = rawDate.rawDate.split(' ')
+    const firstPart = rawDate.rawDate.split(' ')
 
-    var d = firstPart[0].split('-')
-    var months = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember']
+    const d = firstPart[0].split('-')
+    const months = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember']
     return d[2] + '. ' + months[d[1].replace('0', '')] + ' ' + d[0]
   }
 }

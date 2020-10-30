@@ -25,6 +25,8 @@ class Category extends React.Component {
           return (
             <Link key={key} href='/s/[slug]' as={`/s/${category.slug}`}><a>{category.name}</a></Link>
           )
+        } else {
+          return null
         }
       })
     })

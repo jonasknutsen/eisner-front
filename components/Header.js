@@ -15,7 +15,8 @@ const Header = () => (
         header {
           margin-bottom: 0;
         }
-    `}</style>
+    `}
+    </style>
   </header>
 )
 

@@ -25,7 +25,8 @@ class Facts extends React.Component {
           p {
             margin: 0;
           }
-        `}</style>
+        `}
+        </style>
       </div>
     )
   }

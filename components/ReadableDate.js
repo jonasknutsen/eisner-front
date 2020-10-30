@@ -12,8 +12,8 @@ class ReadableDate extends React.Component {
   }
 
   convertDate (rawDate) {
-    var d = new Date(rawDate.rawDate)
-    var months = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember']
+    const d = new Date(rawDate.rawDate)
+    const months = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember']
     return d.getDate() + '. ' + months[d.getMonth()] + ' ' + d.getFullYear()
   }
 }

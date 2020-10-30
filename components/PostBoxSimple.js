@@ -4,20 +4,22 @@ import Link from 'next/link'
 import ReadableDateCategory from './ReadableDateCategory'
 
 class PostBoxSimple extends React.Component {
-  render = () => {
+  render () {
     const { post } = this.props
     return (
       <div className='post-box-wrapper'>
-        <Link href='/[slug]' as={`/${post.post_name}`}><a>
-          <div className='post-box'>
-            <div className='post-box-content'>
-              <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.post_title }} /></div>
-              <div className='post-box-date'>Publisert <ReadableDateCategory rawDate={post.post_date} /></div>
-              <div className='post-box-excerpt'><span dangerouslySetInnerHTML={{ __html: post.post_content.substring(0, 250) }} /> ...</div>
-              <div className='post-box-read-more'>Les mer om <span className='post-box-read-more-title' dangerouslySetInnerHTML={{ __html: post.post_title }} /></div>
+        <Link href='/[slug]' as={`/${post.post_name}`}>
+          <a>
+            <div className='post-box'>
+              <div className='post-box-content'>
+                <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.post_title }} /></div>
+                <div className='post-box-date'>Publisert <ReadableDateCategory rawDate={post.post_date} /></div>
+                <div className='post-box-excerpt'><span dangerouslySetInnerHTML={{ __html: post.post_content.substring(0, 250) }} /> ...</div>
+                <div className='post-box-read-more'>Les mer om <span className='post-box-read-more-title' dangerouslySetInnerHTML={{ __html: post.post_title }} /></div>
+              </div>
             </div>
-          </div>
-        </a></Link>
+          </a>
+        </Link>
         <style jsx>{`
           .post-box {
 

@@ -5,23 +5,25 @@ import Image from 'next/image'
 import ReadableDate from './ReadableDate'
 
 class PostBox extends React.Component {
-  render = () => {
+  render () {
     const { post } = this.props
     return (
       <div className='post-box-wrapper'>
-        <Link href='/[slug]' as={`/${post.slug}`}><a>
-          <div className='post-box'>
-            <div className='post-box-hero'>
-              <Image height='215' width='480' src={post.acf.stort_bilde ? post.acf.stort_bilde.url : '/img/tegneseriebloggen-default.png'} />
+        <Link href='/[slug]' as={`/${post.slug}`}>
+          <a>
+            <div className='post-box'>
+              <div className='post-box-hero'>
+                <Image height='215' width='480' src={post.acf.stort_bilde ? post.acf.stort_bilde.url : '/img/tegneseriebloggen-default.png'} />
+              </div>
+              <div className='post-box-content'>
+                <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></div>
+                <div className='post-box-date'>Publisert <ReadableDate rawDate={post.date} /></div>
+                <div className='post-box-excerpt'>{post.excerpt.rendered.replace('<p>', '').replace(post.excerpt.rendered.substring(post.excerpt.rendered.indexOf('<a '), post.excerpt.rendered.length - 1), '').substring(0, 250)} ...</div>
+                <div className='post-box-read-more'>Les mer om <span className='post-box-read-more-title' dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></div>
+              </div>
             </div>
-            <div className='post-box-content'>
-              <div className='post-box-title'><h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></div>
-              <div className='post-box-date'>Publisert <ReadableDate rawDate={post.date} /></div>
-              <div className='post-box-excerpt'>{post.excerpt.rendered.replace('<p>', '').replace(post.excerpt.rendered.substring(post.excerpt.rendered.indexOf('<a '), post.excerpt.rendered.length - 1), '').substring(0, 250)} ...</div>
-              <div className='post-box-read-more'>Les mer om <span className='post-box-read-more-title' dangerouslySetInnerHTML={{ __html: post.title.rendered }} /></div>
-            </div>
-          </div>
-        </a></Link>
+          </a>
+        </Link>
         <div className='post-divider' />
         <style jsx>{`
           .post-box {
